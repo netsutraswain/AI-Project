@@ -84,13 +84,16 @@ class PaymentPage extends BasePage {
         const reviewCartButtons = await $$(reviewCartLocator);
         for (const btn of reviewCartButtons) {
             if (await btn.isDisplayed() && await btn.isEnabled()) {
+                await browser.pause(1000);
                 await ElementHelper.click(btn, 'Review Cart Button');
-                break;
+                await browser.pause(1000);
+                // Don't break; click all visible review cart buttons to ensure we hit the right one
             }
         }
         
         await WaitHelper.waitForLoadingToDisappear();
         
+        await WaitHelper.waitForDisplayed(this.chkTermsAndConditions, 30000);
         await ElementHelper.click(this.chkTermsAndConditions, 'Terms and Conditions Checkbox');
         
         const addPaymentLocator = '//*[self::button or self::a][contains(translate(text(), "add payment details", "ADD PAYMENT DETAILS"), "ADD PAYMENT DETAILS") or contains(@aria-label, "ADD PAYMENT DETAILS") or contains(translate(., "add payment details", "ADD PAYMENT DETAILS"), "ADD PAYMENT DETAILS")]';
