@@ -1,0 +1,43 @@
+{
+  "girlDetails": {
+    "firstName": "Jelly",
+    "lastName": "J R Roy",
+    "dobYear": "2010",
+    "dobDay": "Friday, June 4, 2010",
+    "schoolType": "Home Schooled",
+    "schoolName": "home",
+    "grade": "10",
+    "email": "netsutra.swain@gmail.com",
+    "phoneNumber": "(111) 111-1111"
+  },
+  "address": {
+    "zipCode": "10001",
+    "city": "New York",
+    "country": "United States",
+    "addressLine1": "Test 2"
+  },
+  "caregiverDetails": {
+    "email": "s.swain@netsutra.com",
+    "relationship": "Parent"
+  },
+  "medicalDetails": {
+    "hasAllergies": false,
+    "allergiesDetails": "",
+    "hasMedications": false,
+    "physicianName": "Dr. Smith",
+    "physicianPhone": "5551234567",
+    "insuranceCompany": "Blue Cross",
+    "policyNumber": "POL987654321"
+  },
+  "troopSearch": {
+    "troopName": "CT TROOP 27545"
+  },
+  "payment": {
+    "firstName": "sudhansu",
+    "lastName": "Swain",
+    "cardNumber": "4111111111111111",
+    "expiryMonth": "12",
+    "expiryYear": "2030",
+    "cvv": "123"
+  }
+}

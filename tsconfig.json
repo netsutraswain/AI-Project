@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "node",
+      "@wdio/globals/types",
+      "@wdio/mocha-framework",
+      "expect-webdriverio"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@pageobjects/*": ["test/pageobjects/*"],
+      "@helpers/*": ["test/helpers/*"],
+      "@utils/*": ["test/utils/*"],
+      "@data/*": ["test/data/*"],
+      "@constants/*": ["test/constants/*"]
+    }
+  },
+  "include": [
+    "test/**/*.ts",
+    "wdio.conf.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

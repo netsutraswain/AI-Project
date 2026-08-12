@@ -1,0 +1,36 @@
+import { Logger } from '@utils/logger';
+import { WaitHelper } from '@helpers/WaitHelper';
+import { ElementHelper } from '@helpers/ElementHelper';
+
+/**
+ * BasePage containing common methods shared across all Page Objects.
+ */
+export default class BasePage {
+    /**
+     * Navigates to a specific path relative to baseUrl.
+     * @param path URL path (e.g., '/login')
+     */
+    public async open(path: string = ''): Promise<void> {
+        try {
+            Logger.info(`Navigating to: ${path || '/'}`);
+            await browser.url(`/${path}`);
+            // Wait for initial page load to settle
+            await WaitHelper.waitForLoadingToDisappear();
+        } catch (error) {
+            Logger.error(`Failed to navigate to path: ${path}`, error);
+            throw error;
+        }
+    }
+
+    /**
+     * Reusable common header login button click.
+     */
+    public get btnHeaderLogin() { return $('#loginBtn'); }
+
+    /**
+     * Clicks the login button from the global header.
+     */
+    public async clickHeaderLogin(): Promise<void> {
+        await ElementHelper.click(this.btnHeaderLogin, 'Global Header Login Button');
+    }
+}
