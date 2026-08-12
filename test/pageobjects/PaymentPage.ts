@@ -87,7 +87,7 @@ class PaymentPage extends BasePage {
                 await browser.pause(1000);
                 await ElementHelper.click(btn, 'Review Cart Button');
                 await browser.pause(1000);
-                // Don't break; click all visible review cart buttons to ensure we hit the right one
+                break;
             }
         }
         

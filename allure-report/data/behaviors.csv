@@ -1,0 +1,6 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"1","","0","Registration","1","0","E2E Dynamic Girl Registration and Payment","0"
+"0","","0","","1","1","","0"
+"0","","0","Registration","1","0","Positive E2E Registration Flow","0"
+"1","","0","Registration","0","0","End-to-End Girl Registration with CardConnect Payment","0"
+"1","","0","Registration","0","0","Negative E2E Registration Flow - Invalid Payment","0"

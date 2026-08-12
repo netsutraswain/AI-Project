@@ -16,6 +16,7 @@ export default class BasePage {
             await browser.url(`/${path}`);
             // Wait for initial page load to settle
             await WaitHelper.waitForLoadingToDisappear();
+            await this.acceptCookieBanner();
         } catch (error) {
             Logger.error(`Failed to navigate to path: ${path}`, error);
             throw error;
@@ -32,5 +33,20 @@ export default class BasePage {
      */
     public async clickHeaderLogin(): Promise<void> {
         await ElementHelper.click(this.btnHeaderLogin, 'Global Header Login Button');
+    }
+
+    /**
+     * Accepts the cookie consent banner if it is displayed.
+     */
+    public async acceptCookieBanner(): Promise<void> {
+        try {
+            const btnAcceptCookie = $('//button[contains(text(), "Accept") or contains(translate(text(), "ACCEPT", "accept"), "accept")] | //a[contains(text(), "Accept") or contains(translate(text(), "ACCEPT", "accept"), "accept")]');
+            await btnAcceptCookie.waitForDisplayed({ timeout: 5000 });
+            await btnAcceptCookie.click();
+            Logger.info('Cookie banner accepted.');
+            await browser.pause(1000); // Wait for banner to animate away
+        } catch (e) {
+            Logger.info('No cookie banner present or could not be clicked.');
+        }
     }
 }

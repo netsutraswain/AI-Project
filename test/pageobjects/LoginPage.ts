@@ -17,6 +17,22 @@ class LoginPage extends BasePage {
      * @param password User's password
      */
     public async login(username: string, password: string): Promise<void> {
+        let isUsernameVisible = false;
+        for (let i = 0; i < 3; i++) {
+            try {
+                await this.inputUsername.waitForDisplayed({ timeout: 5000 });
+                isUsernameVisible = true;
+                break;
+            } catch (e) {
+                Logger.warn(`Gigya popup not visible (attempt ${i + 1}), retrying clickHeaderLogin...`);
+                await this.clickHeaderLogin();
+            }
+        }
+        
+        if (!isUsernameVisible) {
+            throw new Error('Gigya Username Input still not displayed after multiple retries. Login popup may be blocked.');
+        }
+
         await ElementHelper.setValue(this.inputUsername, username, 'Gigya Username Input');
         await ElementHelper.setValue(this.inputPassword, password, 'Gigya Password Input');
         await ElementHelper.click(this.btnSubmitLogin, 'Gigya Login Submit Button');

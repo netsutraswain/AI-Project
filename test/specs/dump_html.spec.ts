@@ -3,7 +3,7 @@ import LoginPage from '../pageobjects/LoginPage';
 import loginData from '../data/login.json';
 import * as fs from 'fs';
 
-describe('Dump HTML', () => {
+describe.skip('Dump HTML', () => {
     it('should dump HTML of the search page', async () => {
         await LoginPage.open();
         await LoginPage.clickHeaderLogin();
