@@ -211,12 +211,14 @@ describe('Girl Registration and Payment Workflow', () => {
             // This will intentionally fail since we use dummy credentials
             await LoginPage.login('invalidUser@yopmail.com', 'invalidPassword');
             
-            // Intentionally fail the test
-            const errorElement = await $('//*[contains(text(), "Invalid credentials") or contains(@class, "error")]');
-            await errorElement.waitForDisplayed({ timeout: 5000 });
+            // Wait a few seconds to let the application process the invalid login
+            await browser.pause(5000);
             
-            // This expectation will fail intentionally to make the test RED
-            expect(await errorElement.isDisplayed()).toBe(false);
+            // Intentionally fail the test by asserting that login was successful
+            // We expect the URL to contain 'household', but it won't because we used invalid credentials.
+            // This assertion failure will natively propagate to Mocha and turn the test RED.
+            const currentUrl = await browser.getUrl();
+            expect(currentUrl).toContain('household');
 
         } finally {
             if (recorder) {

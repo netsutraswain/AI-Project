@@ -9541,3 +9541,271 @@ Error: element ("#isTermsAndConditions") still not displayed after 30000ms
 2026-08-13 12:55:17 [INFO]: Entered '********' into: Gigya Password Input
 2026-08-13 12:55:19 [INFO]: Clicked on: Gigya Login Submit Button
 2026-08-13 12:55:26 [ERROR]: Test failed: Enterprise Login Failed
+2026-08-13 13:54:30 [INFO]: Opening Application
+2026-08-13 13:54:30 [INFO]: Navigating to: /
+2026-08-13 13:54:34 [INFO]: Cookie banner accepted.
+2026-08-13 13:54:38 [INFO]: Clicked on: Global Header Login Button
+2026-08-13 13:54:38 [INFO]: Logging in with valid credentials
+2026-08-13 13:54:41 [INFO]: Entered 'LTOct11adult00811@yopmail.com' into: Gigya Username Input
+2026-08-13 13:54:41 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-13 13:54:44 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-13 13:54:48 [INFO]: Navigating to My Household
+2026-08-13 13:54:48 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-13 13:54:51 [INFO]: Navigating directly to Register Member URL
+2026-08-13 13:54:54 [INFO]: Searching and Selecting Troop
+2026-08-13 13:54:54 [INFO]: Searching for troops with zip code: 10001
+2026-08-13 13:54:59 [INFO]: Typed Zip Code via physical keystrokes: 10001
+2026-08-13 13:55:04 [INFO]: Clicked on: 10th Grade Filter
+2026-08-13 13:55:07 [INFO]: Clicked on: Search Troops Button
+2026-08-13 13:55:13 [INFO]: Clicked on: Select Troop 0 Button
+2026-08-13 13:55:16 [INFO]: Clicked on: Add Details Button
+2026-08-13 13:55:16 [INFO]: Entering dynamically generated Girl Information
+2026-08-13 13:55:19 [INFO]: Entered '10001' into: Zip Code
+2026-08-13 13:55:20 [INFO]: Entered 'New York' into: City
+2026-08-13 13:55:22 [INFO]: Clicked on: State Dropdown
+2026-08-13 13:55:26 [INFO]: Clicked on: State Option (First Available)
+2026-08-13 13:55:28 [INFO]: Clicked on: Country Dropdown
+2026-08-13 13:55:41 [ERROR]: Element with selector '[object Promise]' was not clickable within 10000ms. - element ("//*[contains(text(), "United States")]") still not clickable after 10000ms
+Error: element ("//*[contains(text(), "United States")]") still not clickable after 10000ms
+    at <anonymous> (D:\AI Project\node_modules\webdriverio\build\node.js:6216:15)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Function.waitForClickable (D:\AI Project\test\helpers\WaitHelper.ts:28:13)
+    at async Function.click (D:\AI Project\test\helpers\ElementHelper.ts:16:17)
+    at async RegistrationPage.fillAddress (D:\AI Project\test\pageobjects\RegistrationPage.ts:254:17)
+2026-08-13 13:55:41 [WARN]: Standard click failed for Country: United States, attempting JS click fallback.
+2026-08-13 13:55:41 [INFO]: Clicked on: Country: United States
+2026-08-13 13:55:42 [INFO]: Entered '6241 qIpziv 4837 Maple Street 1786609468868' into: Address Line 1
+2026-08-13 13:55:43 [INFO]: Entered 'EmmaqUuhm_1786609468868' into: First Name Input
+2026-08-13 13:55:44 [INFO]: Entered 'JohnsonLFyRh_1786609468868' into: Last Name Input
+2026-08-13 13:55:48 [INFO]: Clicked on: Grade Dropdown
+2026-08-13 13:55:51 [INFO]: Clicked on: Grade: 10
+2026-08-13 13:55:55 [INFO]: Clicked on: Participation Type Dropdown
+2026-08-13 13:55:58 [INFO]: Clicked on: Participation Type: Troop Member
+2026-08-13 13:56:01 [INFO]: Clicked on: Troop Dropdown
+2026-08-13 13:56:04 [INFO]: Clicked on: Troop Selection
+2026-08-13 13:56:06 [INFO]: Clicked on: Ethnicity Dropdown
+2026-08-13 13:56:09 [INFO]: Clicked on: Ethnicity Option (First Available)
+2026-08-13 13:56:12 [INFO]: Clicked on: Race Dropdown
+2026-08-13 13:56:15 [INFO]: Clicked on: Race Option (First Available)
+2026-08-13 13:56:16 [INFO]: Entered '06/04/2010' into: DOB Input
+2026-08-13 13:56:24 [INFO]: Entering dynamically generated Caregiver Information
+2026-08-13 13:56:31 [INFO]: Entered 'SarahAYJnP_1786609468868' into: Caregiver First Name
+2026-08-13 13:56:34 [INFO]: Entered 'JohnsonLFyRh_1786609468868' into: Caregiver Last Name
+2026-08-13 13:56:35 [INFO]: Entered 'girlGSRfB_1786609468868@yopmail.com' into: Caregiver Email
+2026-08-13 13:56:36 [INFO]: Entered '7566002805' into: Phone Number
+2026-08-13 13:56:39 [INFO]: Clicked on: Caregiver Phone Type
+2026-08-13 13:56:42 [INFO]: Clicked on: Caregiver Phone Type Option
+2026-08-13 13:56:45 [INFO]: Clicked on: Caregiver Gender
+2026-08-13 13:56:48 [INFO]: Clicked on: Caregiver Gender Option
+2026-08-13 13:56:51 [INFO]: Clicked on: Caregiver Relationship
+2026-08-13 13:56:54 [INFO]: Clicked on: Caregiver Relationship Option
+2026-08-13 13:56:55 [INFO]: Entered '01/01/1980' into: Caregiver DOB
+2026-08-13 13:56:58 [INFO]: Clicked on: Same Address as Girl Checkbox
+2026-08-13 13:57:01 [INFO]: Clicked on: Continue / Save Button
+2026-08-13 13:57:08 [INFO]: Medical and Agreements pages were skipped in this flow. Proceeding to Cart.
+2026-08-13 13:57:08 [INFO]: Verifying Cart and Membership
+2026-08-13 13:57:11 [INFO]: Clicked on: Membership Year Option
+2026-08-13 13:57:14 [INFO]: Clicked on: Credit Card Payment Type
+2026-08-13 13:57:18 [INFO]: Clicked on: Save Details Button
+2026-08-13 13:57:54 [ERROR]: Element with selector '[object Promise]' was not displayed within 30000ms. - element ("#isTermsAndConditions") still not displayed after 30000ms
+Error: element ("#isTermsAndConditions") still not displayed after 30000ms
+    at <anonymous> (D:\AI Project\node_modules\webdriverio\build\node.js:6216:15)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Function.waitForDisplayed (D:\AI Project\test\helpers\WaitHelper.ts:13:13)
+    at async PaymentPage.reviewCartAndAcceptTerms (D:\AI Project\test\pageobjects\PaymentPage.ts:96:9)
+    at async <anonymous> (D:\AI Project\test\specs\registration.spec.ts:142:13)
+2026-08-13 13:57:59 [ERROR]: Test failed: Enterprise Girl Registration Workflow with Payment Flow
+2026-08-13 13:58:04 [INFO]: Opening Application
+2026-08-13 13:58:04 [INFO]: Navigating to: /
+2026-08-13 13:58:08 [INFO]: Cookie banner accepted.
+2026-08-13 13:58:13 [INFO]: Clicked on: Global Header Login Button
+2026-08-13 13:58:13 [INFO]: Logging in with invalid credentials
+2026-08-13 13:58:15 [INFO]: Entered 'invalidUser@yopmail.com' into: Gigya Username Input
+2026-08-13 13:58:16 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-13 13:58:18 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-13 13:58:25 [ERROR]: Test failed: Enterprise Login Failed
+2026-08-13 13:59:01 [INFO]: Opening Application
+2026-08-13 13:59:01 [INFO]: Navigating to: /
+2026-08-13 13:59:06 [INFO]: Cookie banner accepted.
+2026-08-13 13:59:10 [INFO]: Clicked on: Global Header Login Button
+2026-08-13 13:59:10 [INFO]: Logging in with valid credentials
+2026-08-13 13:59:12 [INFO]: Entered 'LTOct11adult00811@yopmail.com' into: Gigya Username Input
+2026-08-13 13:59:12 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-13 13:59:15 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-13 13:59:20 [INFO]: Navigating to My Household
+2026-08-13 13:59:20 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-13 13:59:23 [INFO]: Navigating directly to Register Member URL
+2026-08-13 13:59:26 [INFO]: Searching and Selecting Troop
+2026-08-13 13:59:26 [INFO]: Searching for troops with zip code: 10001
+2026-08-13 13:59:32 [INFO]: Typed Zip Code via physical keystrokes: 10001
+2026-08-13 13:59:37 [INFO]: Clicked on: 10th Grade Filter
+2026-08-13 13:59:40 [INFO]: Clicked on: Search Troops Button
+2026-08-13 13:59:46 [INFO]: Clicked on: Select Troop 0 Button
+2026-08-13 13:59:49 [INFO]: Clicked on: Add Details Button
+2026-08-13 13:59:49 [INFO]: Entering dynamically generated Girl Information
+2026-08-13 13:59:53 [INFO]: Entered '10001' into: Zip Code
+2026-08-13 13:59:53 [INFO]: Entered 'New York' into: City
+2026-08-13 13:59:56 [INFO]: Clicked on: State Dropdown
+2026-08-13 14:00:00 [INFO]: Clicked on: State Option (First Available)
+2026-08-13 14:00:01 [INFO]: Entered '2424 uTLpVy 4837 Maple Street 1786609740472' into: Address Line 1
+2026-08-13 14:00:02 [INFO]: Entered 'EmmavAgYN_1786609740471' into: First Name Input
+2026-08-13 14:00:03 [INFO]: Entered 'JohnsoncNfWF_1786609740471' into: Last Name Input
+2026-08-13 14:00:05 [INFO]: Clicked on: Grade Dropdown
+2026-08-13 14:00:09 [INFO]: Clicked on: Grade: 10
+2026-08-13 14:00:13 [INFO]: Clicked on: Participation Type Dropdown
+2026-08-13 14:00:16 [INFO]: Clicked on: Participation Type: Troop Member
+2026-08-13 14:00:19 [INFO]: Clicked on: Troop Dropdown
+2026-08-13 14:00:22 [INFO]: Clicked on: Troop Selection
+2026-08-13 14:00:25 [INFO]: Clicked on: Ethnicity Dropdown
+2026-08-13 14:00:28 [INFO]: Clicked on: Ethnicity Option (First Available)
+2026-08-13 14:00:30 [INFO]: Clicked on: Race Dropdown
+2026-08-13 14:00:33 [INFO]: Clicked on: Race Option (First Available)
+2026-08-13 14:00:35 [INFO]: Entered '06/04/2010' into: DOB Input
+2026-08-13 14:00:44 [INFO]: Entering dynamically generated Caregiver Information
+2026-08-13 14:00:53 [INFO]: Entered 'SarahxKwQp_1786609740472' into: Caregiver First Name
+2026-08-13 14:00:59 [INFO]: Entered 'JohnsoncNfWF_1786609740471' into: Caregiver Last Name
+2026-08-13 14:01:00 [INFO]: Entered 'girlORvrX_1786609740472@yopmail.com' into: Caregiver Email
+2026-08-13 14:01:01 [INFO]: Entered '2296077914' into: Phone Number
+2026-08-13 14:01:04 [INFO]: Clicked on: Caregiver Phone Type
+2026-08-13 14:01:07 [INFO]: Clicked on: Caregiver Phone Type Option
+2026-08-13 14:01:10 [INFO]: Clicked on: Caregiver Gender
+2026-08-13 14:01:13 [INFO]: Clicked on: Caregiver Gender Option
+2026-08-13 14:01:16 [INFO]: Clicked on: Caregiver Relationship
+2026-08-13 14:01:20 [INFO]: Clicked on: Caregiver Relationship Option
+2026-08-13 14:01:21 [INFO]: Entered '01/01/1980' into: Caregiver DOB
+2026-08-13 14:01:23 [INFO]: Clicked on: Same Address as Girl Checkbox
+2026-08-13 14:01:26 [INFO]: Clicked on: Continue / Save Button
+2026-08-13 14:01:34 [INFO]: Medical and Agreements pages were skipped in this flow. Proceeding to Cart.
+2026-08-13 14:01:34 [INFO]: Verifying Cart and Membership
+2026-08-13 14:01:37 [INFO]: Clicked on: Membership Year Option
+2026-08-13 14:01:40 [INFO]: Clicked on: Credit Card Payment Type
+2026-08-13 14:01:44 [INFO]: Clicked on: Save Details Button
+2026-08-13 14:01:51 [INFO]: Clicked on: Review Cart Button
+2026-08-13 14:01:57 [INFO]: Clicked on: Terms and Conditions Checkbox
+2026-08-13 14:02:00 [INFO]: Clicked on: Add Payment Details Button
+2026-08-13 14:02:02 [INFO]: Entering Payment Details within CardConnect IFrame
+2026-08-13 14:02:03 [INFO]: Entered '********' into: Cardholder First Name
+2026-08-13 14:02:04 [INFO]: Entered '********' into: Cardholder Last Name
+2026-08-13 14:02:06 [INFO]: Switched to SnapPay Outer IFrame
+2026-08-13 14:02:06 [INFO]: Switched to CardConnect Interop/Tokenizer IFrame
+2026-08-13 14:02:12 [INFO]: Clicked on: Token Form Blur Click
+2026-08-13 14:02:12 [INFO]: Switched back to Top-Level Context
+2026-08-13 14:02:12 [INFO]: Submitting Payment
+2026-08-13 14:02:16 [INFO]: Clicked on: Submit Payment Button
+2026-08-13 14:02:18 [INFO]: Verifying Registration Success and Extracting Data
+2026-08-13 14:02:18 [INFO]: Waiting for Registration Confirmation Page to load
+2026-08-13 14:02:24 [INFO]: Registration successful! Order #: Unknown
+2026-08-13 14:02:32 [INFO]: Opening Application
+2026-08-13 14:02:32 [INFO]: Navigating to: /
+2026-08-13 14:02:36 [INFO]: Cookie banner accepted.
+2026-08-13 14:02:40 [INFO]: Clicked on: Global Header Login Button
+2026-08-13 14:02:40 [INFO]: Logging in with invalid credentials
+2026-08-13 14:02:42 [INFO]: Entered 'invalidUser@yopmail.com' into: Gigya Username Input
+2026-08-13 14:02:42 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-13 14:02:45 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-13 14:02:52 [ERROR]: Test failed: Enterprise Login Failed
+2026-08-13 14:04:16 [INFO]: Opening Application
+2026-08-13 14:04:16 [INFO]: Navigating to: /
+2026-08-13 14:04:20 [INFO]: Cookie banner accepted.
+2026-08-13 14:04:24 [INFO]: Clicked on: Global Header Login Button
+2026-08-13 14:04:24 [INFO]: Logging in with valid credentials
+2026-08-13 14:04:27 [INFO]: Entered 'LTOct11adult00811@yopmail.com' into: Gigya Username Input
+2026-08-13 14:04:28 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-13 14:04:30 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-13 14:04:35 [INFO]: Navigating to My Household
+2026-08-13 14:04:35 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-13 14:04:38 [INFO]: Navigating directly to Register Member URL
+2026-08-13 14:04:42 [INFO]: Searching and Selecting Troop
+2026-08-13 14:04:42 [INFO]: Searching for troops with zip code: 10001
+2026-08-13 14:04:48 [INFO]: Typed Zip Code via physical keystrokes: 10001
+2026-08-13 14:04:52 [INFO]: Clicked on: 10th Grade Filter
+2026-08-13 14:04:56 [INFO]: Clicked on: Search Troops Button
+2026-08-13 14:05:02 [INFO]: Clicked on: Select Troop 0 Button
+2026-08-13 14:05:04 [INFO]: Clicked on: Add Details Button
+2026-08-13 14:05:04 [INFO]: Entering dynamically generated Girl Information
+2026-08-13 14:05:08 [INFO]: Entered '10001' into: Zip Code
+2026-08-13 14:05:09 [INFO]: Entered 'New York' into: City
+2026-08-13 14:05:12 [INFO]: Clicked on: State Dropdown
+2026-08-13 14:05:15 [INFO]: Clicked on: State Option (First Available)
+2026-08-13 14:05:18 [INFO]: Clicked on: Country Dropdown
+2026-08-13 14:05:30 [ERROR]: Element with selector '[object Promise]' was not clickable within 10000ms. - element ("//*[contains(text(), "United States")]") still not clickable after 10000ms
+Error: element ("//*[contains(text(), "United States")]") still not clickable after 10000ms
+    at <anonymous> (D:\AI Project\node_modules\webdriverio\build\node.js:6216:15)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Function.waitForClickable (D:\AI Project\test\helpers\WaitHelper.ts:28:13)
+    at async Function.click (D:\AI Project\test\helpers\ElementHelper.ts:16:17)
+    at async RegistrationPage.fillAddress (D:\AI Project\test\pageobjects\RegistrationPage.ts:254:17)
+2026-08-13 14:05:30 [WARN]: Standard click failed for Country: United States, attempting JS click fallback.
+2026-08-13 14:05:31 [INFO]: Clicked on: Country: United States
+2026-08-13 14:05:31 [INFO]: Entered '2391 uVmvPv 4837 Maple Street 1786610054534' into: Address Line 1
+2026-08-13 14:05:32 [INFO]: Entered 'EmmainFGk_1786610054534' into: First Name Input
+2026-08-13 14:05:33 [INFO]: Entered 'JohnsonTVzdK_1786610054534' into: Last Name Input
+2026-08-13 14:05:35 [INFO]: Clicked on: Grade Dropdown
+2026-08-13 14:05:38 [INFO]: Clicked on: Grade: 10
+2026-08-13 14:05:42 [INFO]: Clicked on: Participation Type Dropdown
+2026-08-13 14:05:47 [INFO]: Clicked on: Participation Type: Troop Member
+2026-08-13 14:05:50 [INFO]: Clicked on: Troop Dropdown
+2026-08-13 14:05:53 [INFO]: Clicked on: Troop Selection
+2026-08-13 14:05:56 [INFO]: Clicked on: Ethnicity Dropdown
+2026-08-13 14:05:58 [INFO]: Clicked on: Ethnicity Option (First Available)
+2026-08-13 14:06:01 [INFO]: Clicked on: Race Dropdown
+2026-08-13 14:06:04 [INFO]: Clicked on: Race Option (First Available)
+2026-08-13 14:06:05 [INFO]: Entered '06/04/2010' into: DOB Input
+2026-08-13 14:06:14 [INFO]: Entering dynamically generated Caregiver Information
+2026-08-13 14:06:20 [INFO]: Entered 'SarahbqzVW_1786610054534' into: Caregiver First Name
+2026-08-13 14:06:24 [INFO]: Entered 'JohnsonTVzdK_1786610054534' into: Caregiver Last Name
+2026-08-13 14:06:24 [INFO]: Entered 'girlSeTGv_1786610054534@yopmail.com' into: Caregiver Email
+2026-08-13 14:06:25 [INFO]: Entered '4949598737' into: Phone Number
+2026-08-13 14:06:28 [INFO]: Clicked on: Caregiver Phone Type
+2026-08-13 14:06:31 [INFO]: Clicked on: Caregiver Phone Type Option
+2026-08-13 14:06:33 [INFO]: Clicked on: Caregiver Gender
+2026-08-13 14:06:37 [INFO]: Clicked on: Caregiver Gender Option
+2026-08-13 14:06:39 [INFO]: Clicked on: Caregiver Relationship
+2026-08-13 14:06:42 [INFO]: Clicked on: Caregiver Relationship Option
+2026-08-13 14:06:43 [INFO]: Entered '01/01/1980' into: Caregiver DOB
+2026-08-13 14:06:45 [INFO]: Clicked on: Same Address as Girl Checkbox
+2026-08-13 14:06:48 [INFO]: Clicked on: Continue / Save Button
+2026-08-13 14:06:55 [INFO]: Medical and Agreements pages were skipped in this flow. Proceeding to Cart.
+2026-08-13 14:06:55 [INFO]: Verifying Cart and Membership
+2026-08-13 14:06:58 [INFO]: Clicked on: Membership Year Option
+2026-08-13 14:07:02 [INFO]: Clicked on: Credit Card Payment Type
+2026-08-13 14:07:05 [INFO]: Clicked on: Save Details Button
+2026-08-13 14:07:13 [INFO]: Clicked on: Review Cart Button
+2026-08-13 14:07:18 [INFO]: Clicked on: Terms and Conditions Checkbox
+2026-08-13 14:07:21 [INFO]: Clicked on: Add Payment Details Button
+2026-08-13 14:07:23 [INFO]: Entering Payment Details within CardConnect IFrame
+2026-08-13 14:07:24 [INFO]: Entered '********' into: Cardholder First Name
+2026-08-13 14:07:24 [INFO]: Entered '********' into: Cardholder Last Name
+2026-08-13 14:07:25 [INFO]: Switched to SnapPay Outer IFrame
+2026-08-13 14:07:26 [INFO]: Switched to CardConnect Interop/Tokenizer IFrame
+2026-08-13 14:07:32 [INFO]: Clicked on: Token Form Blur Click
+2026-08-13 14:07:32 [INFO]: Switched back to Top-Level Context
+2026-08-13 14:07:32 [INFO]: Submitting Payment
+2026-08-13 14:07:34 [INFO]: Clicked on: Submit Payment Button
+2026-08-13 14:07:36 [INFO]: Verifying Registration Success and Extracting Data
+2026-08-13 14:07:36 [INFO]: Waiting for Registration Confirmation Page to load
+2026-08-13 14:07:42 [INFO]: Registration successful! Order #: Unknown
+2026-08-13 14:07:49 [INFO]: Opening Application
+2026-08-13 14:07:49 [INFO]: Navigating to: /
+2026-08-13 14:07:53 [INFO]: Cookie banner accepted.
+2026-08-13 14:07:57 [INFO]: Clicked on: Global Header Login Button
+2026-08-13 14:07:57 [INFO]: Logging in with invalid credentials
+2026-08-13 14:08:00 [INFO]: Entered 'invalidUser@yopmail.com' into: Gigya Username Input
+2026-08-13 14:08:00 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-13 14:08:03 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-13 14:08:09 [ERROR]: Test failed: Enterprise Login Failed
