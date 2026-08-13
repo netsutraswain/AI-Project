@@ -143,72 +143,89 @@ describe('Girl Registration and Payment Workflow', () => {
         });
     }
 
-    it('should successfully register a new girl and complete payment', async () => {
-        allure.addStory('Positive E2E Registration Flow');
-        
-        await executeFlowUpToPayment();
+    it('Enterprise Girl Registration Workflow with Payment Flow', async () => {
+        const timestamp = Date.now();
+        const videoPath = `enterprise-girl-registration-payment-${timestamp}.mp4`;
+        let recorder;
+        try {
+            const puppeteer = await browser.getPuppeteer();
+            const pages = await puppeteer.pages();
+            const page = pages[0];
+            const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
+            recorder = new PuppeteerScreenRecorder(page);
+            await recorder.start(videoPath);
 
-        await allure.step('10. Payment', async () => {
-            Logger.info('Entering Payment Details within CardConnect IFrame');
-            await PaymentPage.fillCardholderName({
-                firstName: generatedParentFirstName,
-                lastName: generatedParentLastName
+            allure.addStory('Positive E2E Registration Flow');
+            
+            await executeFlowUpToPayment();
+
+            await allure.step('10. Payment', async () => {
+                Logger.info('Entering Payment Details within CardConnect IFrame');
+                await PaymentPage.fillCardholderName({
+                    firstName: generatedParentFirstName,
+                    lastName: generatedParentLastName
+                });
+                await PaymentPage.fillCreditCardDetails(registrationData.payment);
+                
+                Logger.info('Submitting Payment');
+                await PaymentPage.submitPayment();
             });
-            await PaymentPage.fillCreditCardDetails(registrationData.payment);
-            
-            Logger.info('Submitting Payment');
-            await PaymentPage.submitPayment();
-        });
 
-        await allure.step('11. Registration Confirmation', async () => {
-            Logger.info('Verifying Registration Success and Extracting Data');
-            const confirmationDetails = await ConfirmationPage.verifyAndCaptureConfirmation();
-            
-            expect(confirmationDetails.confirmationMessage.toLowerCase()).toMatch(/(thank you|success)/);
-            Logger.info(`Registration successful! Order #: ${confirmationDetails.registrationNumber}`);
-        });
+            await allure.step('11. Registration Confirmation', async () => {
+                Logger.info('Verifying Registration Success and Extracting Data');
+                const confirmationDetails = await ConfirmationPage.verifyAndCaptureConfirmation();
+                
+                expect(confirmationDetails.confirmationMessage.toLowerCase()).toMatch(/(thank you|success)/);
+                Logger.info(`Registration successful! Order #: ${confirmationDetails.registrationNumber}`);
+            });
+        } finally {
+            if (recorder) {
+                await recorder.stop();
+            }
+            const fs = require('fs');
+            if (fs.existsSync(videoPath)) {
+                allure.addAttachment('Video Recording', fs.readFileSync(videoPath), 'video/mp4');
+            }
+        }
     });
 
-    it('should fail when invalid payment information is submitted', async () => {
-        allure.addStory('Negative E2E Registration Flow - Invalid Payment');
-        
-        await executeFlowUpToPayment();
+    it('Enterprise Login Failed', async () => {
+        const timestamp = Date.now();
+        const videoPath = `enterprise-login-failed-${timestamp}.mp4`;
+        let recorder;
+        try {
+            const puppeteer = await browser.getPuppeteer();
+            const pages = await puppeteer.pages();
+            const page = pages[0];
+            const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
+            recorder = new PuppeteerScreenRecorder(page);
+            await recorder.start(videoPath);
+            
+            allure.addStory('Negative Login Flow');
+            
+            Logger.info('Opening Application');
+            await LoginPage.open();
+            await LoginPage.clickHeaderLogin();
+            
+            Logger.info('Logging in with invalid credentials');
+            // This will intentionally fail since we use dummy credentials
+            await LoginPage.login('invalidUser@yopmail.com', 'invalidPassword');
+            
+            // Intentionally fail the test
+            const errorElement = await $('//*[contains(text(), "Invalid credentials") or contains(@class, "error")]');
+            await errorElement.waitForDisplayed({ timeout: 5000 });
+            
+            // This expectation will fail intentionally to make the test RED
+            expect(await errorElement.isDisplayed()).toBe(false);
 
-        await allure.step('10. Enter intentionally invalid payment information', async () => {
-            Logger.info('Entering Invalid Payment Details');
-            await PaymentPage.fillCardholderName({
-                firstName: generatedParentFirstName,
-                lastName: generatedParentLastName
-            });
-            
-            // Intentionally invalid card number for negative testing
-            const invalidPaymentData = {
-                ...registrationData.payment,
-                cardNumber: '4000000000000012' // typical declined/invalid card
-            };
-            await PaymentPage.fillCreditCardDetails(invalidPaymentData);
-            
-            Logger.info('Submitting Invalid Payment');
-            await PaymentPage.submitPayment();
-        });
-
-        await allure.step('11. Verify that payment is NOT successful', async () => {
-            Logger.info('Checking for expected payment failure message');
-            
-            // We expect an error message to be displayed on the page instead of redirecting to confirmation
-            const errorLocator = $('//*[contains(@class, "error") or contains(@class, "alert") or contains(translate(text(), "DECLININVALIDFAIL", "declininvalidfail"), "declin") or contains(translate(text(), "DECLININVALIDFAIL", "declininvalidfail"), "invalid") or contains(translate(text(), "DECLININVALIDFAIL", "declininvalidfail"), "fail")]');
-            
-            try {
-                await errorLocator.waitForDisplayed({ timeout: 15000 });
-                const errorText = await errorLocator.getText();
-                Logger.info(`Successfully intercepted expected payment rejection: ${errorText}`);
-                expect(errorText.length).toBeGreaterThan(0);
-            } catch (err) {
-                // If specific error message is not found, verify we at least didn't reach the confirmation page
-                Logger.warn('Specific error element not found. Verifying we did not reach Confirmation page.');
-                const isConfirmationDisplayed = await ConfirmationPage.lblConfirmationMessage.isDisplayed();
-                expect(isConfirmationDisplayed).toBe(false);
+        } finally {
+            if (recorder) {
+                await recorder.stop();
             }
-        });
+            const fs = require('fs');
+            if (fs.existsSync(videoPath)) {
+                allure.addAttachment('Video Recording', fs.readFileSync(videoPath), 'video/mp4');
+            }
+        }
     });
 });

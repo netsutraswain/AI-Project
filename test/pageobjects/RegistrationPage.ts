@@ -163,10 +163,7 @@ class RegistrationPage extends BasePage {
                         }
                         await browser.pause(3000); // wait for network
                         
-                        try {
-                            const html = await browser.execute(() => document.documentElement.outerHTML);
-                            require('fs').writeFileSync('d:\\\\AI Project\\\\school_dropdown_dump.html', html);
-                        } catch(e) {}
+
                         
                         let clicked = false;
                         const options = await $$('a*=Home');

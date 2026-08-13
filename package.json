@@ -31,6 +31,7 @@
     "@wdio/spec-reporter": "^9.0.0",
     "allure-commandline": "^2.27.0",
     "expect-webdriverio": "^5.0.0",
+    "puppeteer-screen-recorder": "^3.0.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "winston": "^3.13.0"
