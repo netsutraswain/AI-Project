@@ -124,12 +124,9 @@ class PaymentPage extends BasePage {
     }
 
     public async fillCreditCardDetails(paymentData: any): Promise<void> {
-        await WaitHelper.waitForDisplayed(this.iframeOuterPayment, 'SnapPay Outer IFrame');
+        await WaitHelper.waitForDisplayed(this.iframePayment, 30000);
         
         try {
-            await browser.switchFrame(await this.iframeOuterPayment);
-            Logger.info('Switched to SnapPay Outer IFrame');
-
             await browser.switchFrame(await this.iframePayment);
             Logger.info('Switched to CardConnect Interop/Tokenizer IFrame');
 
