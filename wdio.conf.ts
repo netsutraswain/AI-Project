@@ -35,7 +35,13 @@ export const config: Options.Testrunner = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--window-size=1920,1080']
+            args: [
+                '--headless=new',
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--window-size=1351,900'
+            ]
         }
     }],
     //
