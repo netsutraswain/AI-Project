@@ -1,10 +1,11 @@
 import type { Options } from '@wdio/types';
 
-export const config: Options.Testrunner = {
+const isCI = process.env.CI === 'true';
 
+export const config: Options.Testrunner = {
     runner: 'local',
 
-    // IMPORTANT: Do not let WebdriverIO automatically start Xvfb
+    // Do not let WDIO start Xvfb
     autoXvfb: false,
 
     automationProtocol: 'webdriver',
@@ -29,13 +30,17 @@ export const config: Options.Testrunner = {
         browserName: 'chrome',
 
         'goog:chromeOptions': {
-            args: [
-                '--headless=new',
-                '--no-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-gpu',
-                '--window-size=1351,900'
-            ]
+            args: isCI
+                ? [
+                    '--headless=new',
+                    '--no-sandbox',
+                    '--disable-dev-shm-usage',
+                    '--disable-gpu',
+                    '--window-size=1920,1080'
+                ]
+                : [
+                    '--window-size=1920,1080'
+                ]
         }
     }],
 
@@ -71,7 +76,6 @@ export const config: Options.Testrunner = {
     },
 
     afterTest: async function (test, context, { error }) {
-
         if (error) {
             await browser.takeScreenshot();
         }
