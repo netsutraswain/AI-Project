@@ -10,9 +10,12 @@ import MedicalInfoPage from '@pageobjects/MedicalInfoPage';
 import AgreementsPage from '@pageobjects/AgreementsPage';
 import PaymentPage from '@pageobjects/PaymentPage';
 import ConfirmationPage from '@pageobjects/ConfirmationPage';
+import ParentPage from '@pageobjects/ParentPage';
 
 // Helpers
+import { AllureHelper } from '@helpers/AllureHelper';
 import { DataGenerator } from '@helpers/DataGenerator';
+import { YopmailHelper } from '@helpers/YopmailHelper';
 import { WaitHelper } from '@helpers/WaitHelper';
 
 // Data
@@ -37,7 +40,7 @@ describe('Girl Registration and Payment Workflow', () => {
             window.sessionStorage.clear();
         });
         await browser.refresh();
-        
+
         allure.addFeature('Registration');
         allure.addSeverity('critical');
         allure.addEnvironment('BROWSER', browser.capabilities.browserName || 'unknown');
@@ -77,10 +80,10 @@ describe('Girl Registration and Payment Workflow', () => {
             Logger.info('Opening Application');
             await LoginPage.open();
             await LoginPage.clickHeaderLogin();
-            
+
             Logger.info('Logging in with valid credentials');
             await LoginPage.login(loginData.validUser.username, loginData.validUser.password);
-            
+
             await browser.waitUntil(
                 async () => {
                     const url = await browser.getUrl();
@@ -105,7 +108,7 @@ describe('Girl Registration and Payment Workflow', () => {
             Logger.info('Entering dynamically generated Girl Information');
             const dynamicGirlData = { ...registrationData.girlDetails, firstName: generatedFirstName, lastName: generatedLastName };
             const dynamicAddressData = { ...registrationData.address, addressLine1: generatedAddress };
-            
+
             await RegistrationPage.fillAddress(dynamicAddressData);
             await RegistrationPage.fillGirlDetails(dynamicGirlData);
         });
@@ -114,7 +117,7 @@ describe('Girl Registration and Payment Workflow', () => {
             Logger.info('Entering dynamically generated Caregiver Information');
             const dynamicCaregiverData = { ...registrationData.caregiverDetails, firstName: generatedParentFirstName, lastName: generatedParentLastName, email: generatedEmail };
             const dynamicAddressData = { ...registrationData.address, addressLine1: generatedAddress };
-            
+
             await RegistrationPage.fillCaregiverDetails(dynamicCaregiverData, dynamicAddressData, generatedPhone);
             await RegistrationPage.clickContinue();
         });
@@ -156,7 +159,7 @@ describe('Girl Registration and Payment Workflow', () => {
             await recorder.start(videoPath);
 
             allure.addStory('Positive E2E Registration Flow');
-            
+
             await executeFlowUpToPayment();
 
             await allure.step('10. Payment', async () => {
@@ -166,7 +169,7 @@ describe('Girl Registration and Payment Workflow', () => {
                     lastName: generatedParentLastName
                 });
                 await PaymentPage.fillCreditCardDetails(registrationData.payment);
-                
+
                 Logger.info('Submitting Payment');
                 await PaymentPage.submitPayment();
             });
@@ -174,7 +177,7 @@ describe('Girl Registration and Payment Workflow', () => {
             await allure.step('11. Registration Confirmation', async () => {
                 Logger.info('Verifying Registration Success and Extracting Data');
                 const confirmationDetails = await ConfirmationPage.verifyAndCaptureConfirmation();
-                
+
                 expect(confirmationDetails.confirmationMessage.toLowerCase()).toMatch(/(thank you|success)/);
                 Logger.info(`Registration successful! Order #: ${confirmationDetails.registrationNumber}`);
             });
@@ -200,25 +203,121 @@ describe('Girl Registration and Payment Workflow', () => {
             const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
             recorder = new PuppeteerScreenRecorder(page);
             await recorder.start(videoPath);
-            
+
             allure.addStory('Negative Login Flow');
-            
+
             Logger.info('Opening Application');
             await LoginPage.open();
             await LoginPage.clickHeaderLogin();
-            
+
             Logger.info('Logging in with invalid credentials');
             // This will intentionally fail since we use dummy credentials
             await LoginPage.login('invalidUser@yopmail.com', 'invalidPassword');
-            
+
             // Wait a few seconds to let the application process the invalid login
             await browser.pause(5000);
-            
+
             // Intentionally fail the test by asserting that login was successful
             // We expect the URL to contain 'household', but it won't because we used invalid credentials.
             // This assertion failure will natively propagate to Mocha and turn the test RED.
             const currentUrl = await browser.getUrl();
             expect(currentUrl).toContain('household');
+
+        } finally {
+            if (recorder) {
+                await recorder.stop();
+            }
+            const fs = require('fs');
+            if (fs.existsSync(videoPath)) {
+                allure.addAttachment('Video Recording', fs.readFileSync(videoPath), 'video/mp4');
+            }
+        }
+    });
+
+    it('Enterprise Parent Registration Workflow', async () => {
+        const timestamp = Date.now();
+        const videoPath = `enterprise-parent-registration-${timestamp}.mp4`;
+        let recorder;
+        try {
+            const puppeteer = await browser.getPuppeteer();
+            const pages = await puppeteer.pages();
+            const page = pages[0];
+            const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
+            recorder = new PuppeteerScreenRecorder(page);
+            await recorder.start(videoPath);
+
+            allure.addStory('Positive Parent Registration Flow');
+
+            Logger.info('Starting Parent Registration Flow');
+
+            await allure.step('1. Parent Signup', async () => {
+                Logger.info('Parent Signup Setup');
+                // The URL is already loaded by beforeEach ('/')
+                const parentDetails = {
+                    firstName: generatedParentFirstName,
+                    lastName: generatedParentLastName,
+                    phone: generatedPhone,
+                    email: generatedEmail,
+                    password: 'TestPassword123!',
+                    zipCode: '10001'
+                };
+                await ParentPage.signupParent(parentDetails);
+            });
+
+            await allure.step('2. OTP Verification', async () => {
+                Logger.info('Asserting OTP page is displayed');
+                const otpInputs = await $$('input[name="code"], input[placeholder*="Code" i], input[placeholder*="OTP" i]');
+                if (otpInputs.length > 0) {
+                    await expect(otpInputs[0]).toBeDisplayed();
+                }
+
+                Logger.info('Fetching real OTP from Yopmail');
+                const otpCode = await YopmailHelper.getOtp(generatedEmail);
+                Logger.info(`Entering real OTP (${otpCode}) into application`);
+                await ParentPage.verifyOtp(otpCode);
+            });
+
+            await allure.step('3. Dashboard (After OTP)', async () => {
+                Logger.info('Waiting for login state to be established in header...');
+                await browser.waitUntil(
+                    async () => {
+                        const logoutBtn = await $('button[id="loginBtn"]');
+                        if (await logoutBtn.isExisting() && (await logoutBtn.getText()).toLowerCase().includes('logout')) return true;
+
+                        const myAccountBtn = await $('#myAccountBtn');
+                        if (await myAccountBtn.isExisting()) return true;
+
+                        return false;
+                    },
+                    { timeout: 20000, timeoutMsg: 'User did not get logged in after OTP' }
+                );
+
+                Logger.info('Navigating to and Verifying Dashboard after OTP');
+                await DashboardPage.navigateToMyHousehold();
+
+                await browser.waitUntil(
+                    async () => {
+                        const url = await browser.getUrl();
+                        return url.includes('household') || url.includes('my-account') || url.includes('dashboard') || url.includes('profile');
+                    },
+                    { timeout: 15000, timeoutMsg: 'Dashboard did not load after OTP' }
+                );
+
+                Logger.info('Verifying Dashboard is displayed');
+                const myAccountBtn = await DashboardPage.btnMyAccount;
+                await expect(myAccountBtn).toBeDisplayed();
+            });
+
+            await allure.step('4. Parent Logout', async () => {
+                Logger.info('Logging out after registration');
+                await ParentPage.logout();
+
+                Logger.info('Verifying logout was successful');
+                const loginBtn = await ParentPage.btnHeaderLogin;
+                await expect(loginBtn).toBeDisplayed();
+            });
+
+
 
         } finally {
             if (recorder) {
