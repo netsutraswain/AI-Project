@@ -327,6 +327,10 @@ describe('Girl Registration and Payment Workflow', () => {
             if (fs.existsSync(videoPath)) {
                 allure.addAttachment('Video Recording', fs.readFileSync(videoPath), 'video/mp4');
             }
+            const yopmailVideoPath = 'yopmail-otp-latest.mp4';
+            if (fs.existsSync(yopmailVideoPath)) {
+                allure.addAttachment('Yopmail OTP Extraction Video', fs.readFileSync(yopmailVideoPath), 'video/mp4');
+            }
         }
     });
 });

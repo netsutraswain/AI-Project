@@ -13804,3 +13804,328 @@ Tuesd...
 2026-08-25 11:10:14 [INFO]: Logging out parent...
 2026-08-25 11:10:19 [INFO]: Clicked on: Logout Button
 2026-08-25 11:10:21 [INFO]: Verifying logout was successful
+2026-08-25 11:24:48 [INFO]: Opening Application
+2026-08-25 11:24:48 [INFO]: Navigating to: /
+2026-08-25 11:24:56 [INFO]: Cookie banner accepted.
+2026-08-25 11:25:04 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:25:04 [INFO]: Logging in with valid credentials
+2026-08-25 11:25:09 [INFO]: Entered 'LTOct11adult00811@yopmail.com' into: Gigya Username Input
+2026-08-25 11:25:11 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-25 11:25:14 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-25 11:25:20 [INFO]: Navigating to My Household
+2026-08-25 11:25:20 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-25 11:25:24 [INFO]: Navigating directly to Register Member URL
+2026-08-25 11:25:28 [INFO]: Searching and Selecting Troop
+2026-08-25 11:25:28 [INFO]: Searching for troops with zip code: 10001
+2026-08-25 11:25:35 [INFO]: Typed Zip Code via physical keystrokes: 10001
+2026-08-25 11:25:40 [INFO]: Clicked on: 10th Grade Filter
+2026-08-25 11:25:43 [INFO]: Clicked on: Search Troops Button
+2026-08-25 11:25:53 [INFO]: Clicked on: Select Troop 0 Button
+2026-08-25 11:25:56 [INFO]: Clicked on: Add Details Button
+2026-08-25 11:25:56 [INFO]: Entering dynamically generated Girl Information
+2026-08-25 11:26:05 [INFO]: Entered '10001' into: Zip Code
+2026-08-25 11:26:06 [INFO]: Entered 'New York' into: City
+2026-08-25 11:26:09 [INFO]: Clicked on: State Dropdown
+2026-08-25 11:26:13 [INFO]: Clicked on: State Option (First Available)
+2026-08-25 11:26:16 [INFO]: Clicked on: Country Dropdown
+2026-08-25 11:26:29 [ERROR]: Element with selector '[object Promise]' was not clickable within 10000ms. - element ("//*[contains(text(), "United States")]") still not clickable after 10000ms
+Error: element ("//*[contains(text(), "United States")]") still not clickable after 10000ms
+    at <anonymous> (D:\AI Project\node_modules\webdriverio\build\node.js:6216:15)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Function.waitForClickable (D:\AI Project\test\helpers\WaitHelper.ts:28:13)
+    at async Function.click (D:\AI Project\test\helpers\ElementHelper.ts:16:17)
+    at async RegistrationPage.fillAddress (D:\AI Project\test\pageobjects\RegistrationPage.ts:254:17)
+2026-08-25 11:26:29 [WARN]: Standard click failed for Country: United States, attempting JS click fallback.
+2026-08-25 11:26:29 [INFO]: Clicked on: Country: United States
+2026-08-25 11:26:30 [INFO]: Entered '8044 iSYppw 4837 Maple Street 1787637287261' into: Address Line 1
+2026-08-25 11:26:31 [INFO]: Entered 'EmmaQKRtQ_1787637287260' into: First Name Input
+2026-08-25 11:26:32 [INFO]: Entered 'JohnsonbsJEB_1787637287260' into: Last Name Input
+2026-08-25 11:26:35 [INFO]: Clicked on: Grade Dropdown
+2026-08-25 11:26:40 [INFO]: Clicked on: Grade: 10
+2026-08-25 11:26:44 [INFO]: Clicked on: Participation Type Dropdown
+2026-08-25 11:26:48 [INFO]: Clicked on: Participation Type: Troop Member
+2026-08-25 11:26:52 [INFO]: Clicked on: Troop Dropdown
+2026-08-25 11:26:56 [INFO]: Clicked on: Troop Selection
+2026-08-25 11:27:00 [INFO]: Clicked on: Ethnicity Dropdown
+2026-08-25 11:27:03 [INFO]: Clicked on: Ethnicity Option (First Available)
+2026-08-25 11:27:07 [INFO]: Clicked on: Race Dropdown
+2026-08-25 11:27:10 [INFO]: Clicked on: Race Option (First Available)
+2026-08-25 11:27:11 [INFO]: Entered '06/04/2010' into: DOB Input
+2026-08-25 11:27:20 [INFO]: Entering dynamically generated Caregiver Information
+2026-08-25 11:27:28 [INFO]: Entered 'SarahVCTKQ_1787637287260' into: Caregiver First Name
+2026-08-25 11:27:33 [INFO]: Entered 'JohnsonbsJEB_1787637287260' into: Caregiver Last Name
+2026-08-25 11:27:34 [INFO]: Entered 'girlQODNq_1787637287261@yopmail.com' into: Caregiver Email
+2026-08-25 11:27:35 [INFO]: Entered '4155232118' into: Phone Number
+2026-08-25 11:27:38 [INFO]: Clicked on: Caregiver Phone Type
+2026-08-25 11:27:42 [INFO]: Clicked on: Caregiver Phone Type Option
+2026-08-25 11:27:45 [INFO]: Clicked on: Caregiver Gender
+2026-08-25 11:27:48 [INFO]: Clicked on: Caregiver Gender Option
+2026-08-25 11:27:51 [INFO]: Clicked on: Caregiver Relationship
+2026-08-25 11:27:54 [INFO]: Clicked on: Caregiver Relationship Option
+2026-08-25 11:27:55 [INFO]: Entered '01/01/1980' into: Caregiver DOB
+2026-08-25 11:27:58 [INFO]: Clicked on: Same Address as Girl Checkbox
+2026-08-25 11:28:01 [INFO]: Clicked on: Continue / Save Button
+2026-08-25 11:28:08 [INFO]: Medical and Agreements pages were skipped in this flow. Proceeding to Cart.
+2026-08-25 11:28:08 [INFO]: Verifying Cart and Membership
+2026-08-25 11:28:11 [INFO]: Clicked on: Membership Year Option
+2026-08-25 11:28:14 [INFO]: Clicked on: Credit Card Payment Type
+2026-08-25 11:28:18 [INFO]: Clicked on: Save Details Button
+2026-08-25 11:28:54 [ERROR]: Element with selector '[object Promise]' was not displayed within 30000ms. - element ("#isTermsAndConditions") still not displayed after 30000ms
+Error: element ("#isTermsAndConditions") still not displayed after 30000ms
+    at <anonymous> (D:\AI Project\node_modules\webdriverio\build\node.js:6216:15)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Element.elementErrorHandlerCallbackFn (D:\AI Project\node_modules\webdriverio\build\node.js:9819:24)
+    at async Element.wrapCommandFn (D:\AI Project\node_modules\@wdio\utils\build\index.js:982:23)
+    at async Function.waitForDisplayed (D:\AI Project\test\helpers\WaitHelper.ts:13:13)
+    at async PaymentPage.reviewCartAndAcceptTerms (D:\AI Project\test\pageobjects\PaymentPage.ts:96:9)
+    at async <anonymous> (D:\AI Project\test\specs\registration.spec.ts:145:13)
+2026-08-25 11:28:59 [ERROR]: Test failed: Enterprise Girl Registration Workflow with Payment Flow
+2026-08-25 11:29:05 [INFO]: Opening Application
+2026-08-25 11:29:05 [INFO]: Navigating to: /
+2026-08-25 11:29:11 [INFO]: Cookie banner accepted.
+2026-08-25 11:29:18 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:29:18 [INFO]: Logging in with invalid credentials
+2026-08-25 11:29:22 [INFO]: Entered 'invalidUser@yopmail.com' into: Gigya Username Input
+2026-08-25 11:29:22 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-25 11:29:25 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-25 11:29:32 [ERROR]: Test failed: Enterprise Login Failed
+2026-08-25 11:29:39 [INFO]: Starting Parent Registration Flow
+2026-08-25 11:29:39 [INFO]: Parent Signup Setup
+2026-08-25 11:29:39 [INFO]: Signing up parent with email: girlIlVTI_1787637577793@yopmail.com
+2026-08-25 11:29:41 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:29:44 [INFO]: Clicked on: Sign Up Tab
+2026-08-25 11:29:47 [INFO]: Entered 'SarahyrsDq_1787637577793' into: Signup First Name
+2026-08-25 11:29:47 [INFO]: Entered 'JohnsonSpCBl_1787637577793' into: Signup Last Name
+2026-08-25 11:29:47 [INFO]: Entered '2874298236' into: Signup Phone
+2026-08-25 11:29:48 [INFO]: Entered 'girlIlVTI_1787637577793@yopmail.com' into: Signup Email
+2026-08-25 11:29:48 [INFO]: Entered '10001' into: Signup Zip Code
+2026-08-25 11:29:49 [INFO]: Entered '********' into: Signup Password
+2026-08-25 11:29:50 [INFO]: Entered '********' into: Confirm Password
+2026-08-25 11:29:50 [INFO]: Clicked #gigya-saptcha-checkbox via JS
+2026-08-25 11:29:58 [INFO]: Clicked on: Submit Signup
+2026-08-25 11:30:02 [INFO]: Asserting OTP page is displayed
+2026-08-25 11:30:02 [INFO]: Fetching real OTP from Yopmail
+2026-08-25 11:30:02 [INFO]: Fetching OTP for girlIlVTI_1787637577793 from Yopmail...
+2026-08-25 11:30:23 [INFO]: Checking Yopmail inbox (Attempt 1/12)...
+2026-08-25 11:30:26 [INFO]: Email body text preview: 
+Deliverability
+  
+Reply
+
+Forward
+   
+Print
+  
+Delete
+  
+Girl Scouts - Verify your email address!
+
+Girl Scouts <noreply@girlscouts.org>
+
+Tuesd...
+2026-08-25 11:30:26 [INFO]: Successfully extracted OTP: 646926
+2026-08-25 11:30:26 [INFO]: Entering real OTP (646926) into application
+2026-08-25 11:30:26 [INFO]: Verifying OTP code...
+2026-08-25 11:30:27 [INFO]: Entered '646926' into: OTP Code
+2026-08-25 11:30:29 [INFO]: Clicked on: Verify OTP Button
+2026-08-25 11:30:31 [INFO]: Waiting for login state to be established in header...
+2026-08-25 11:30:38 [INFO]: Navigating to and Verifying Dashboard after OTP
+2026-08-25 11:30:38 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-25 11:30:46 [INFO]: Verifying Dashboard is displayed
+2026-08-25 11:30:46 [INFO]: Logging out after registration
+2026-08-25 11:30:46 [INFO]: Logging out parent...
+2026-08-25 11:30:50 [INFO]: Clicked on: Logout Button
+2026-08-25 11:30:53 [INFO]: Verifying logout was successful
+2026-08-25 11:38:20 [INFO]: Opening Application
+2026-08-25 11:38:20 [INFO]: Navigating to: /
+2026-08-25 11:38:26 [INFO]: Cookie banner accepted.
+2026-08-25 11:38:33 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:38:33 [INFO]: Logging in with valid credentials
+2026-08-25 11:38:47 [ERROR]: Test failed: Enterprise Girl Registration Workflow with Payment Flow
+2026-08-25 11:38:57 [INFO]: Opening Application
+2026-08-25 11:38:57 [INFO]: Navigating to: /
+2026-08-25 11:39:06 [INFO]: Cookie banner accepted.
+2026-08-25 11:39:13 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:39:13 [INFO]: Logging in with invalid credentials
+2026-08-25 11:39:14 [INFO]: Entered 'invalidUser@yopmail.com' into: Gigya Username Input
+2026-08-25 11:39:15 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-25 11:39:17 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-25 11:39:28 [ERROR]: Test failed: Enterprise Login Failed
+2026-08-25 11:39:34 [INFO]: Starting Parent Registration Flow
+2026-08-25 11:39:34 [INFO]: Parent Signup Setup
+2026-08-25 11:39:34 [INFO]: Signing up parent with email: girljOclh_1787638174286@yopmail.com
+2026-08-25 11:39:40 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:39:43 [INFO]: Clicked on: Sign Up Tab
+2026-08-25 11:39:46 [INFO]: Entered 'SarahQKoLq_1787638174286' into: Signup First Name
+2026-08-25 11:39:47 [INFO]: Entered 'JohnsonuEVwP_1787638174286' into: Signup Last Name
+2026-08-25 11:39:49 [INFO]: Entered '9336988555' into: Signup Phone
+2026-08-25 11:39:50 [INFO]: Entered 'girljOclh_1787638174286@yopmail.com' into: Signup Email
+2026-08-25 11:39:51 [INFO]: Entered '10001' into: Signup Zip Code
+2026-08-25 11:39:51 [INFO]: Entered '********' into: Signup Password
+2026-08-25 11:39:52 [INFO]: Entered '********' into: Confirm Password
+2026-08-25 11:39:52 [INFO]: Clicked #gigya-saptcha-checkbox via JS
+2026-08-25 11:40:01 [INFO]: Clicked on: Submit Signup
+2026-08-25 11:40:05 [INFO]: Asserting OTP page is displayed
+2026-08-25 11:40:05 [INFO]: Fetching real OTP from Yopmail
+2026-08-25 11:40:05 [INFO]: Fetching OTP for girljOclh_1787638174286 from Yopmail...
+2026-08-25 11:40:24 [INFO]: Checking Yopmail inbox (Attempt 1/12)...
+2026-08-25 11:40:27 [INFO]: Email body text preview: 
+Deliverability
+  
+Reply
+
+Forward
+   
+Print
+  
+Delete
+  
+Girl Scouts - Verify your email address!
+
+Girl Scouts <noreply@girlscouts.org>
+
+Tuesd...
+2026-08-25 11:40:27 [INFO]: Successfully extracted OTP: 967365
+2026-08-25 11:40:32 [INFO]: Entering real OTP (967365) into application
+2026-08-25 11:40:32 [INFO]: Verifying OTP code...
+2026-08-25 11:40:32 [INFO]: Entered '967365' into: OTP Code
+2026-08-25 11:40:34 [INFO]: Clicked on: Verify OTP Button
+2026-08-25 11:40:36 [INFO]: Waiting for login state to be established in header...
+2026-08-25 11:40:40 [INFO]: Navigating to and Verifying Dashboard after OTP
+2026-08-25 11:40:40 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-25 11:40:47 [INFO]: Verifying Dashboard is displayed
+2026-08-25 11:40:47 [INFO]: Logging out after registration
+2026-08-25 11:40:47 [INFO]: Logging out parent...
+2026-08-25 11:40:52 [INFO]: Clicked on: Logout Button
+2026-08-25 11:40:54 [INFO]: Verifying logout was successful
+2026-08-25 11:51:45 [INFO]: Opening Application
+2026-08-25 11:51:45 [INFO]: Navigating to: /
+2026-08-25 11:51:51 [INFO]: Cookie banner accepted.
+2026-08-25 11:51:58 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:51:58 [INFO]: Logging in with valid credentials
+2026-08-25 11:52:03 [INFO]: Entered 'LTOct11adult00811@yopmail.com' into: Gigya Username Input
+2026-08-25 11:52:04 [INFO]: Entered '********' into: Gigya Password Input
+2026-08-25 11:52:06 [INFO]: Clicked on: Gigya Login Submit Button
+2026-08-25 11:52:13 [INFO]: Navigating to My Household
+2026-08-25 11:52:13 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-25 11:52:19 [INFO]: Navigating directly to Register Member URL
+2026-08-25 11:52:23 [INFO]: Searching and Selecting Troop
+2026-08-25 11:52:23 [INFO]: Searching for troops with zip code: 10001
+2026-08-25 11:52:30 [INFO]: Typed Zip Code via physical keystrokes: 10001
+2026-08-25 11:52:35 [INFO]: Clicked on: 10th Grade Filter
+2026-08-25 11:52:39 [INFO]: Clicked on: Search Troops Button
+2026-08-25 11:52:50 [INFO]: Clicked on: Select Troop 0 Button
+2026-08-25 11:52:53 [INFO]: Clicked on: Add Details Button
+2026-08-25 11:52:53 [INFO]: Entering dynamically generated Girl Information
+2026-08-25 11:53:01 [INFO]: Entered '10001' into: Zip Code
+2026-08-25 11:53:02 [INFO]: Entered 'New York' into: City
+2026-08-25 11:53:06 [INFO]: Clicked on: State Dropdown
+2026-08-25 11:53:10 [INFO]: Clicked on: State Option (First Available)
+2026-08-25 11:53:11 [INFO]: Entered '2626 HdfcnQ 4837 Maple Street 1787638903551' into: Address Line 1
+2026-08-25 11:53:13 [INFO]: Entered 'EmmaOyJSa_1787638903551' into: First Name Input
+2026-08-25 11:53:14 [INFO]: Entered 'JohnsontHPUt_1787638903551' into: Last Name Input
+2026-08-25 11:53:18 [INFO]: Clicked on: Grade Dropdown
+2026-08-25 11:53:24 [INFO]: Clicked on: Grade: 10
+2026-08-25 11:53:29 [INFO]: Clicked on: Participation Type Dropdown
+2026-08-25 11:53:32 [INFO]: Clicked on: Participation Type: Troop Member
+2026-08-25 11:53:36 [INFO]: Clicked on: Troop Dropdown
+2026-08-25 11:53:39 [INFO]: Clicked on: Troop Selection
+2026-08-25 11:53:43 [INFO]: Clicked on: Ethnicity Dropdown
+2026-08-25 11:53:46 [INFO]: Clicked on: Ethnicity Option (First Available)
+2026-08-25 11:53:49 [INFO]: Clicked on: Race Dropdown
+2026-08-25 11:53:52 [INFO]: Clicked on: Race Option (First Available)
+2026-08-25 11:53:54 [INFO]: Entered '06/04/2010' into: DOB Input
+2026-08-25 11:54:03 [INFO]: Entering dynamically generated Caregiver Information
+2026-08-25 11:54:16 [INFO]: Entered 'SarahIcuYd_1787638903551' into: Caregiver First Name
+2026-08-25 11:54:23 [INFO]: Entered 'JohnsontHPUt_1787638903551' into: Caregiver Last Name
+2026-08-25 11:54:24 [INFO]: Entered 'girlaxNEU_1787638903551@yopmail.com' into: Caregiver Email
+2026-08-25 11:54:26 [INFO]: Entered '4762316932' into: Phone Number
+2026-08-25 11:54:29 [INFO]: Clicked on: Caregiver Phone Type
+2026-08-25 11:54:32 [INFO]: Clicked on: Caregiver Phone Type Option
+2026-08-25 11:54:35 [INFO]: Clicked on: Caregiver Gender
+2026-08-25 11:54:38 [INFO]: Clicked on: Caregiver Gender Option
+2026-08-25 11:54:41 [INFO]: Clicked on: Caregiver Relationship
+2026-08-25 11:54:45 [INFO]: Clicked on: Caregiver Relationship Option
+2026-08-25 11:54:46 [INFO]: Entered '01/01/1980' into: Caregiver DOB
+2026-08-25 11:54:49 [INFO]: Clicked on: Same Address as Girl Checkbox
+2026-08-25 11:54:52 [INFO]: Clicked on: Continue / Save Button
+2026-08-25 11:54:59 [INFO]: Medical and Agreements pages were skipped in this flow. Proceeding to Cart.
+2026-08-25 11:54:59 [INFO]: Verifying Cart and Membership
+2026-08-25 11:55:03 [INFO]: Clicked on: Membership Year Option
+2026-08-25 11:55:07 [INFO]: Clicked on: Credit Card Payment Type
+2026-08-25 11:55:11 [INFO]: Clicked on: Save Details Button
+2026-08-25 11:55:19 [INFO]: Clicked on: Review Cart Button
+2026-08-25 11:55:25 [INFO]: Clicked on: Terms and Conditions Checkbox
+2026-08-25 11:55:28 [INFO]: Clicked on: Add Payment Details Button
+2026-08-25 11:55:30 [INFO]: Entering Payment Details within CardConnect IFrame
+2026-08-25 11:55:32 [INFO]: Entered '********' into: Cardholder First Name
+2026-08-25 11:55:33 [INFO]: Entered '********' into: Cardholder Last Name
+2026-08-25 11:55:37 [INFO]: Switched to CardConnect Interop/Tokenizer IFrame
+2026-08-25 11:55:41 [INFO]: Clicked on: Token Form Blur Click
+2026-08-25 11:55:41 [INFO]: Switched back to Top-Level Context
+2026-08-25 11:55:41 [INFO]: Submitting Payment
+2026-08-25 11:55:44 [INFO]: Clicked on: Submit Payment Button
+2026-08-25 11:55:46 [INFO]: Verifying Registration Success and Extracting Data
+2026-08-25 11:55:46 [INFO]: Waiting for Registration Confirmation Page to load
+2026-08-25 11:55:54 [INFO]: Registration successful! Order #: Unknown
+2026-08-25 11:56:03 [INFO]: Opening Application
+2026-08-25 11:56:03 [INFO]: Navigating to: /
+2026-08-25 11:56:07 [INFO]: Cookie banner accepted.
+2026-08-25 11:56:14 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:56:14 [INFO]: Logging in with invalid credentials
+2026-08-25 11:56:21 [ERROR]: Test failed: Enterprise Login Failed
+2026-08-25 11:56:25 [INFO]: Starting Parent Registration Flow
+2026-08-25 11:56:25 [INFO]: Parent Signup Setup
+2026-08-25 11:56:25 [INFO]: Signing up parent with email: girlborQe_1787639184781@yopmail.com
+2026-08-25 11:56:28 [INFO]: Clicked on: Global Header Login Button
+2026-08-25 11:56:31 [INFO]: Clicked on: Sign Up Tab
+2026-08-25 11:56:33 [INFO]: Entered 'SarahFsdzt_1787639184781' into: Signup First Name
+2026-08-25 11:56:33 [INFO]: Entered 'JohnsonniuKz_1787639184781' into: Signup Last Name
+2026-08-25 11:56:34 [INFO]: Entered '8162933606' into: Signup Phone
+2026-08-25 11:56:34 [INFO]: Entered 'girlborQe_1787639184781@yopmail.com' into: Signup Email
+2026-08-25 11:56:35 [INFO]: Entered '10001' into: Signup Zip Code
+2026-08-25 11:56:36 [INFO]: Entered '********' into: Signup Password
+2026-08-25 11:56:36 [INFO]: Entered '********' into: Confirm Password
+2026-08-25 11:56:37 [INFO]: Clicked #gigya-saptcha-checkbox via JS
+2026-08-25 11:56:45 [INFO]: Clicked on: Submit Signup
+2026-08-25 11:56:49 [INFO]: Asserting OTP page is displayed
+2026-08-25 11:56:49 [INFO]: Fetching real OTP from Yopmail
+2026-08-25 11:56:49 [INFO]: Fetching OTP for girlborQe_1787639184781 from Yopmail...
+2026-08-25 11:57:19 [INFO]: Checking Yopmail inbox (Attempt 1/12)...
+2026-08-25 11:57:21 [INFO]: Email body text preview: 
+Deliverability
+  
+Reply
+
+Forward
+   
+Print
+  
+Delete
+  
+Girl Scouts - Verify your email address!
+
+Girl Scouts <noreply@girlscouts.org>
+
+Tuesd...
+2026-08-25 11:57:21 [INFO]: Successfully extracted OTP: 607291
+2026-08-25 11:57:23 [INFO]: Entering real OTP (607291) into application
+2026-08-25 11:57:23 [INFO]: Verifying OTP code...
+2026-08-25 11:57:23 [INFO]: Entered '607291' into: OTP Code
+2026-08-25 11:57:26 [INFO]: Clicked on: Verify OTP Button
+2026-08-25 11:57:28 [INFO]: Waiting for login state to be established in header...
+2026-08-25 11:57:33 [INFO]: Navigating to and Verifying Dashboard after OTP
+2026-08-25 11:57:33 [INFO]: Navigating directly to My Household URL to bypass UI flakiness
+2026-08-25 11:57:38 [INFO]: Verifying Dashboard is displayed
+2026-08-25 11:57:39 [INFO]: Logging out after registration
+2026-08-25 11:57:39 [INFO]: Logging out parent...
+2026-08-25 11:57:43 [INFO]: Clicked on: Logout Button
+2026-08-25 11:57:45 [INFO]: Verifying logout was successful

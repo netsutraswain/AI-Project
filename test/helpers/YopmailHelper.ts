@@ -1,4 +1,6 @@
 import { Logger } from '@utils/logger';
+import allure from '@wdio/allure-reporter';
+import * as fs from 'fs';
 
 export class YopmailHelper {
     /**
@@ -15,12 +17,27 @@ export class YopmailHelper {
         // Extract just the username part for Yopmail input
         const yopmailUser = email.split('@')[0];
         
+        let recorder: any;
+        const videoPath = `yopmail-otp-latest.mp4`;
+        
         try {
             Logger.info(`Fetching OTP for ${yopmailUser} from Yopmail...`);
             
             // 1. Open new window and switch to it
             await browser.newWindow('https://yopmail.com/en/');
             await browser.pause(2000); // Allow Yopmail UI to settle
+
+            try {
+                const puppeteer = await browser.getPuppeteer();
+                const pages = await puppeteer.pages();
+                // Find the specific page that contains yopmail in the URL
+                const yopmailPage = pages.find(p => p.url().includes('yopmail')) || pages[pages.length - 1];
+                const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
+                recorder = new PuppeteerScreenRecorder(yopmailPage);
+                await recorder.start(videoPath);
+            } catch (recError) {
+                Logger.info('Failed to start Puppeteer video recording for Yopmail: ' + recError);
+            }
             
             // 2. Enter email and check inbox
             const loginInput = await $('#login, .ycptinput, input[placeholder="Enter your inbox here"]');
@@ -110,6 +127,17 @@ export class YopmailHelper {
                 await browser.switchToWindow(originalWindow);
             }
             throw error;
+        } finally {
+            if (recorder) {
+                try {
+                    await recorder.stop();
+                } catch (e) {
+                    Logger.info('Failed to stop Yopmail video recorder.');
+                }
+            }
+            if (fs.existsSync(videoPath)) {
+                allure.addAttachment('Yopmail OTP Extraction Video', fs.readFileSync(videoPath), 'video/mp4');
+            }
         }
     }
 }
